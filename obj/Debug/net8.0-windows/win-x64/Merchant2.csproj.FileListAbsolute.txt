@@ -1,0 +1,10 @@
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Temp\Merchant2\Merchant2.deps.json
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Temp\Merchant2\Merchant2.dll
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\Merchant2.csproj.AssemblyReference.cache
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\Merchant2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\Merchant2.AssemblyInfoInputs.cache
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\Merchant2.AssemblyInfo.cs
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\Merchant2.csproj.CoreCompileInputs.cache
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\Merchant2.dll
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\refint\Merchant2.dll
+C:\Users\FranciscoJR\Desktop\ExileCore\ExileCore2_241224-1.0.0+a10ab938b50d8c891ad85647cc301ff480479733\Plugins\Source\Merchant2\obj\Debug\net8.0-windows\win-x64\ref\Merchant2.dll
