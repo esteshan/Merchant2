@@ -1,50 +1,53 @@
 ﻿using System.Drawing;
 using ExileCore2;
+using ExileCore2.PoEMemory;
 using ExileCore2.PoEMemory.MemoryObjects;
-using Logger = ExileCore2CustomLogger.Logger;
+using Merchant2.helper;
 using Vector2 = System.Numerics.Vector2;
 
 namespace Merchant2;
 
 public class Merchant2 : BaseSettingsPlugin<Merchant2Settings>
 {
+    private int _currencyAmount = 0; // Stores extracted currency
+    
     public override bool Initialise()
     {
-        //Perform one-time initialization here
-
-        //Maybe load you custom config (only do so if builtin settings are inadequate for the job)
-        //var configPath = Path.Join(ConfigDirectory, "custom_config.txt");
-        //if (File.Exists(configPath))
-        //{
-        //    var data = File.ReadAllText(configPath);
-        //}
-
+       
         return true;
     }
-
-    public override void AreaChange(AreaInstance area)
-    {
-        //Perform once-per-zone processing here
-        //For example, Radar builds the zone map texture here
-    }
-
+    
     public override void Tick()
     {
-        //Perform non-render-related work here, e.g. position calculation.
-        //var a = Math.Sqrt(7);
+        if (!Settings.Enable.Value) return;
+
+        var sanctumWindow = GetSanctumUI();
+        if (sanctumWindow == null || !sanctumWindow.IsVisible) return;
+
+        // ✅ Use the helper function
+        SanctumUiHelper.CurrencyText(sanctumWindow, out var currencyElement);
+
+        if (currencyElement != null && !string.IsNullOrEmpty(currencyElement.Text))
+        {
+            string currencyText = currencyElement.Text.Replace(",", "").Trim();
+            _currencyAmount = int.TryParse(currencyText, out int parsedCurrency) ? parsedCurrency : 0;
+        }
+        else
+        {
+            _currencyAmount = 0; // Default if no value found
+        }
     }
 
     public override void Render()
     {
-        //Any Imgui or Graphics calls go here. This is called after Tick
-        Graphics.DrawText($"Plugin {GetType().Name} is working.", new Vector2(100, 100), Color.Red);
+        if (!Settings.Enable.Value) return;
+
+        int yOffset = 180; // ✅ Position of text on screen
+        Graphics.DrawText($"Currency: {_currencyAmount}", new Vector2(100, yOffset), Color.Cyan);
     }
 
-    public override void EntityAdded(Entity entity)
+    private Element GetSanctumUI()
     {
-        //If you have a reason to process every entity only once,
-        //this is a good place to do so.
-        //You may want to use a queue and run the actual
-        //processing (if any) inside the Tick method.
+        return GameController.IngameState.IngameUi?.SanctumRewardWindow;
     }
 }

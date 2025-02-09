@@ -31,14 +31,12 @@ namespace Merchant2.helper
             closeButton = sanctumRewardWindow.Children.ElementAtOrDefault(3);
         }
 
-        public static void CurrencyText(Element sanctumRewardWindow,
-            out Element currencyText)
+        public static void CurrencyText(Element sanctumRewardWindow, out Element currencyText)
         {
-            currencyText = sanctumRewardWindow.Children.ElementAtOrDefault(100)?
+            currencyText = sanctumRewardWindow.Children.ElementAtOrDefault(0)? // ✅ Check top-level UI first
                 .Children.ElementAtOrDefault(0)?
                 .Children.ElementAtOrDefault(0)?
-                .Children.ElementAtOrDefault(0)?
-                .Children.ElementAtOrDefault(1);
+                .Children.ElementAtOrDefault(1); // ✅ Match working structure
         }
 
         public static async Task<List<Element>> BoonWindow(Element sanctumRewardWindow)
@@ -46,7 +44,7 @@ namespace Merchant2.helper
             return await Task.Run(() =>
             {
                 var boons = new List<Element>();
-                var boonContainer = sanctumRewardWindow.Children.ElementAtOrDefault(100)?
+                var boonContainer = sanctumRewardWindow.Children.ElementAtOrDefault(0)?
                     .Children.ElementAtOrDefault(0)?
                     .Children.ElementAtOrDefault(1)?
                     .Children.ElementAtOrDefault(0)?
